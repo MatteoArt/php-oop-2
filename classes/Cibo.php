@@ -1,11 +1,11 @@
 <?php 
 require_once __DIR__.'/Prodotti.php';
-
+require_once __DIR__.'/traits/Caratteristiche.php';
 class Cibo extends Prodotti {
-    public $articolo;
+    use Caratteristiche;
+
     public $tipologia_cibo;
     public $gusto;
-    public $lifestage;
 
     public function __construct($_tip_cibo,$_gusto,$_lifestage)
     {

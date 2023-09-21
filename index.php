@@ -16,15 +16,15 @@ $productsList = array_map(function ($el) {
 
     if ($el['articolo'] === 'cibo') {
         $cibo = new Cibo($el['tipo'], $el['varietà'], $el['lifestage']);
-        $cibo->articolo = $el['articolo'];
+        $cibo->setArticolo($el['articolo']);
         $arr_el[] = $cibo;
     } else if ($el['articolo'] === 'gioco') {
         $gioco = new Gioco($el['tipo'], $el['varietà'], $el['lifestage']);
-        $gioco->articolo = $el['articolo'];
+        $gioco->setArticolo($el['articolo']);
         $arr_el[] = $gioco;
     } else if ($el['articolo'] === 'cuccie') {
         $cuccia = new Cuccia($el['tipo'], $el['varietà'], $el['lifestage']);
-        $cuccia->articolo = $el['articolo'];
+        $cuccia->setArticolo($el['articolo']);
         $arr_el[] = $cuccia;
     }
     return $arr_el;

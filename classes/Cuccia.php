@@ -1,19 +1,19 @@
 <?php
 require_once __DIR__ . '/Prodotti.php';
-
+require_once __DIR__.'/traits/Caratteristiche.php';
 class Cuccia extends Prodotti
 {
-    public $articolo;
+    use Caratteristiche;
+
     public $tipologia;
     public $materiale;
-    public $age;
 
 
     public function __construct($_tip, $_materiale, $_age)
     {
         $this->tipologia = $_tip;
         $this->materiale = $_materiale;
-        $this->age = $_age;
+        $this->lifestage = $_age;
     }
 
     public function printProdotto()
@@ -25,7 +25,7 @@ class Cuccia extends Prodotti
                 <div class="tipo"><?php echo $this->tipologia ?></div>
                 <div>Materiale: <?php echo $this->materiale ?></div>
             </div>
-            <div class="age">Lifestage: <?php echo $this->age ?></div>
+            <div class="age">Lifestage: <?php echo $this->lifestage ?></div>
         </div>
 <?php
     }
