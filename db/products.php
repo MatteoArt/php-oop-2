@@ -48,6 +48,18 @@ $rawProdList = [
         'tipo' => 'Croccantini',
         'varietà' => 'trota',
         'lifestage' => 'adulto'
+    ],
+    [
+        'nome_prodotto' => null,
+        'img' => 12,
+        'prezzo' => '€15,99',
+        'categoria' => 'cane',
+        'icona' => "<i class='fa-solid fa-dog'></i>",
+        'razza' => 'Tutte le razze',
+        'articolo' => 'cibo',
+        'tipo' => 'Croccantini',
+        'varietà' => 'agnello e riso',
+        'lifestage' => 'adulto'
     ]
     ];
 

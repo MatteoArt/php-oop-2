@@ -17,9 +17,20 @@ class Prodotti
 
     public function getImgPath($path)
     {
+        //gestione eccezione
+        if (!is_string($path)) {
+            throw new Exception("Errore, il path non può essere un numero!");
+        }
         $this->img = './images/' . $path;
     }
 
+    public function ctrTitle($title) {
+        if (!$title) {
+            throw new Exception("");
+        } else {
+            return;
+        }
+    }
 
     public function printInfoCard()
     {

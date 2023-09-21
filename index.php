@@ -11,7 +11,12 @@ $productsList = array_map(function ($el) {
     $arr_el = [];
 
     $prodotto = new Prodotti($el['nome_prodotto'], $el['prezzo'], new Categoria($el['categoria'], $el['razza'], $el['icona']));
-    $prodotto->getImgPath($el['img']);
+    try {
+        $prodotto->getImgPath($el['img']);
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
+    
     $arr_el[] = $prodotto;
 
     if ($el['articolo'] === 'cibo') {
@@ -50,7 +55,8 @@ $productsList = array_map(function ($el) {
         <div class="card-container">
             <?php
             foreach ($productsList as $product) {
-
+               try {
+                $product[0]->ctrTitle($product[0]->titolo);
             ?> <div class="card">
                 <?php
                     $product[0]->printInfoCard();
@@ -58,7 +64,9 @@ $productsList = array_map(function ($el) {
                 ?>
                 </div>
             <?php
-            }
+                } catch(Exception $e) {
+                    echo $e->getMessage();
+                }}
             ?>
         </div>
     </div>
